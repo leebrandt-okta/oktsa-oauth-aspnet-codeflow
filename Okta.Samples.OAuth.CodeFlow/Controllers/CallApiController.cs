@@ -33,7 +33,9 @@ namespace Okta.Samples.OAuth.CodeFlow.Controllers
         {
             ClaimsPrincipal identity = Request.GetOwinContext().Authentication.User;
 
-            var accessToken = identity.Claims.Where(c => c.Type == "access_token").Select(c => c.Value).SingleOrDefault();
+            var atObject = identity.Claims.Where(c => c.Type == "access_token");
+
+            var accessToken = atObject.Select(c => c.Value).SingleOrDefault();
 
             var result = await CallApi(accessToken);
 

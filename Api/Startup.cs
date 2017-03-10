@@ -52,11 +52,13 @@ namespace Api
                 ValidIssuer = authorizationServerIssuer
             };
 
-            app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions
+            var tokenOptions = new OAuthBearerAuthenticationOptions
             {
                 AccessTokenFormat = new JwtFormat(tvps,
-                new OpenIdConnectCachingSecurityTokenProvider(issuer + "/.well-known/openid-configuration"))
-            });
+                new OpenIdConnectCachingSecurityTokenProvider(authorizationServerIssuer + "/.well-known/openid-configuration"))
+            };
+
+            app.UseOAuthBearerAuthentication(tokenOptions);
 
         }
     }

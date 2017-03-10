@@ -17,7 +17,6 @@ using System.Web.Http;
 namespace Api
 {
     [Route("identity")]
-    [Authorize]
     [OktaGroupAuthorize(Policy = GroupPolicy.Any)]
     public class IdentityController : ApiController
     {

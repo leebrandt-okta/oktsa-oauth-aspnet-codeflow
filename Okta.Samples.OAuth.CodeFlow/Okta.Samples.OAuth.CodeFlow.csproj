@@ -226,7 +226,7 @@
     <Content Include="Views\App\Index.cshtml" />
     <Content Include="Views\CallApi\ShowApiResult.cshtml" />
     <Content Include="Views\Home\SignOut.cshtml" />
-    <Content Include="Views\Home\Token.cshtml" />
+    <Content Include="Views\Callback\Token.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
